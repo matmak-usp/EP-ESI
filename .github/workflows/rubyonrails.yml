@@ -10,33 +10,42 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 jobs:
   test:
     runs-on: ubuntu-latest
     
     services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432
+      db:
+        image: postgres:11
         ports: ['5432:5432']
-        options:
+        options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
+      redis:
+        image: redis
+        ports: ['6379:6379']
+        options: --entrypoint redis-server
+
     steps:
-      - name: Debug Database Configuration
-        run: |
-          sudo service postgresql start
       - uses: actions/checkout@v3
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-      - name: Install dependencies
-        run: bundle install
-#     - name: Run tests
-#        run: bundle exec rake
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+      - name: Build and run tests
+        env: 
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          REDIS_URL: redis://localhost:6379/0
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: x
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rails rake
+      
 #      - name: Coveralls GitHub Action
 #        uses: coverallsapp/github-action@v2
