@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Debug Database Configuration
         run: |
-          echo "DATABASE_URL: $DATABASE_URL"
+          sudo service postgres start
       - uses: actions/checkout@v3
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
