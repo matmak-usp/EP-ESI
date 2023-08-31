@@ -4,4 +4,4 @@ A nossa aplicação é um gerador de lista de compras para receitas. A ideia é 
 
 <a href="https://codeclimate.com/github/matmak-usp/EP-ESI/maintainability"><img src="https://api.codeclimate.com/v1/badges/0988a43c1e6282dcc906/maintainability" /></a>
 <a href="https://codeclimate.com/github/matmak-usp/EP-ESI/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0988a43c1e6282dcc906/test_coverage" /></a>
-![example workflow](https://github.com/matmak-usp/EP-ESI/actions/workflows/rubyonrails.yml/badge.svg)
+![workflow](https://github.com/matmak-usp/EP-ESI/actions/workflows/rubyonrails.yml/badge.svg)
