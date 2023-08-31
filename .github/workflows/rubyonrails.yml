@@ -18,6 +18,8 @@ jobs:
     services:
       db:
         image: postgres:11
+        env:
+          POSTGRES_PASSWORD: postgres
         ports: ['5432:5432']
         options: >-
           --health-cmd pg_isready
@@ -39,7 +41,6 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
           RAILS_ENV: test
-          POSTGRES_PASSWORD: postgres
           RAILS_MASTER_KEY: x
         run: |
           sudo apt-get -yqq install libpq-dev
