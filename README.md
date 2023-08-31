@@ -10,10 +10,15 @@ A nossa aplicação é um gerador de lista de compras para receitas. A ideia é 
 
 ## Integrantes
 Mateus Caetano da Silva - 12543989
+
 Winnie Souza Ramos da Silva - 12543972
+
 Vitor Nunes Vanjura - 12543183
+
 Pedro Semcovici - 12745511
+
 Nilton Tadashi Enta - 12730911
+
 Yago Primerano Arouca - 12608643
 
 
