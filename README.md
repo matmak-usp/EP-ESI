@@ -1,5 +1,6 @@
 <a href="https://codeclimate.com/github/matmak-usp/EP-ESI/maintainability"><img src="https://api.codeclimate.com/v1/badges/0988a43c1e6282dcc906/maintainability" /></a>
 <a href="https://codeclimate.com/github/matmak-usp/EP-ESI/test_coverage"><img src="https://api.codeclimate.com/v1/badges/0988a43c1e6282dcc906/test_coverage" /></a>
+<a href='https://coveralls.io/github/matmak-usp/EP-ESI?branch=main'><img src='https://coveralls.io/repos/github/matmak-usp/EP-ESI/badge.svg?branch=main' alt='Coverage Status' /></a>
 ![workflow](https://github.com/matmak-usp/EP-ESI/actions/workflows/rubyonrails.yml/badge.svg)
 
 Link para o Heroku: https://ep-esi-1dcf9b5ab2f4.herokuapp.com/
